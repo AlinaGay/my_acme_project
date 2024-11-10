@@ -21,7 +21,7 @@ def birthday(request, pk=None):
             form.cleaned_data['birthday']
         )
         context.update({'birthday_countdown': birthday_countdown})
-    return render(request, 'birthday/birthday.html', context) 
+    return render(request, 'birthday/birthday.html', context)
 
 
 def birthday_list(request):
