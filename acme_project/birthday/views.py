@@ -18,7 +18,7 @@ class OnlyAuthorMixin(UserPassesTestMixin):
         return object.author == self.request.user
 
 
-class BirthdayListView(LoginRequiredMixin, ListView):
+class BirthdayListView(ListView):
     model = Birthday
     ordering = 'id'
     paginate_by = 10
@@ -43,7 +43,7 @@ class BirthdayDeleteView(LoginRequiredMixin, OnlyAuthorMixin, DeleteView):
     success_url = reverse_lazy('birthday:list')
 
 
-class BirthdayDetailView(LoginRequiredMixin, OnlyAuthorMixin, DetailView):
+class BirthdayDetailView(LoginRequiredMixin, DetailView):
     model = Birthday
 
     def get_context_data(self, **kwargs):
