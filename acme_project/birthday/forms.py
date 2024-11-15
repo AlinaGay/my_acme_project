@@ -15,6 +15,7 @@ class BirthdayForm(forms.ModelForm):
         widgets = {
             'birthday': forms.DateInput(attrs={'type': 'date'})
         }
+        exclude = ('author',)
 
     def clean(self):
         super().clean()
