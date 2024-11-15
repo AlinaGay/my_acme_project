@@ -92,6 +92,8 @@ MEDIA_URL = 'media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 
-EMAIL_FILE_PATH = BASE_DIR / 'sent_emails' 
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
+LOGIN_REDIRECT_URL = 'pages:homepage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
